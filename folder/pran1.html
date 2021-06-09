@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+            img{
+                height:50%;
+                width:50%;
+            }
+        
+               
+               
+            
+          
+        </style>
+        <script>
+             if(!localStorage.getItem('count')){
+                localStorage.setItem('count',0);
+            }
+            let color1= 'red'
+            document.addEventListener('DOMContentLoaded',() =>{
+                
+                document.querySelector('form').onsubmit= function(){
+
+                    if(localStorage.getItem('count')==0){
+                    document.querySelector('#img').src='https://di-uploads-pod16.dealerinspire.com/toyotaofnorthcharlotte/uploads/2019/01/toyota-supra-turbo-m.jpg';
+                    document.body.style.backgroundColor = "red";
+                    document.body.style.borderColor = 'white'
+                    
+                    document.querySelector('h2').innerHTML='hello every one this is mercedes'
+                    localStorage.setItem('count',1)
+                 
+                }   
+                
+               
+                else if(localStorage.getItem('count')==1) {
+                    document.querySelector('#img').src='m.png';
+                    document.body.style.backgroundColor = "lightblue";
+                    document.body.style.borderColor = 'yellow';
+                    document.querySelector('h2').innerHTML='hello every one this is mercedes'
+                    localStorage.setItem('count',2)
+                } else if(localStorage.getItem('count')==2){
+                    document.body.style.backgroundColor = 'violet'
+                    document.body.style.borderColor = 'white';
+                    document.querySelector('#img').src='f.png';
+                    document.querySelector('h2').innerHTML='hello every one this is formula'
+                    localStorage.setItem('count',3);
+                }else if(localstorage.getItem('count')==3){
+                    window.location.reload();
+                }
+                
+                    return false;
+                   
+                }
+                localStorage.setItem('count',0)
+                
+
+               
+            })
+           
+        </script>
+
+    </head>
+    </html>
+    <body style="background-color:blue;border:3px solid black">
+        <h1>hello</h1>
+        
+        <div id='tot' >
+            <h1 style="text-align:center;">cars info</h1>
+        <form>
+        <img id='img' src='ferrari.png' alt='ferrari' style="margin-left:400px;">
+        <h2 style="text-align:center">hello every one this is ferrari</h2>
+        <input id='sub' type='submit' style="margin-left: 800px;">
+        </form>
+        </div>
+    </body>
+</html>
